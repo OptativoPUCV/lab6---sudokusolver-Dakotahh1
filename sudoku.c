@@ -52,11 +52,11 @@ int is_valid(Node *n) {
     for (j = 0; j < 9; j++) {
       int num = n->sudo[i][j];
       if (num != 0) {
-        if (row[i][num] || col[j][num] || box[(i / 3) * 3 + j / 3][num]) {
+        if (row[i][num] || col[j][num] || ) {
           return 0;
         }
         row[i][num] = 1;
-
+        col[j][num] = 1;
         box[(i / 3) * 3 + j / 3][num] = 1;
       }
     }

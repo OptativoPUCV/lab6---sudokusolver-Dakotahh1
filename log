@@ -28,3 +28,17 @@ Thu 16 May 2024 07:13:24 PM UTC:
  tests:  4|3
 total_score: 30/70
 4dd1aa3
+Thu 16 May 2024 07:14:13 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:55:43: error: expected expression before ‘)’ token
+   55 |         if (row[i][num] || col[j][num] || ) {
+      |                                           ^
+sudoku.c:48:7: error: variable ‘box’ set but not used [-Werror=unused-but-set-variable]
+   48 |   int box[9][10] = {0};
+      |       ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+665eec2
