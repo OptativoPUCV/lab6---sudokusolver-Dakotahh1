@@ -52,7 +52,7 @@ int is_valid(Node *n) {
     for (j = 0; j < 9; j++) {
       int num = n->sudo[i][j];
       if (num != 0) {
-        if (row[i][num] || col[j][num] || ) {
+        if (row[i][num] || col[j][num]) {
           return 0;
         }
         row[i][num] = 1;

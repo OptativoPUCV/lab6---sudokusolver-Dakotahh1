@@ -42,3 +42,14 @@ sudoku.c:48:7: error: variable ‘box’ set but not used [-Werror=unused-but-se
 cc1: all warnings being treated as errors
 Compilation failed
 665eec2
+Thu 16 May 2024 07:14:39 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:48:7: error: variable ‘box’ set but not used [-Werror=unused-but-set-variable]
+   48 |   int box[9][10] = {0};
+      |       ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+5927d9f
