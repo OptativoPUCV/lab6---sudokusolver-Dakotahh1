@@ -59,3 +59,14 @@ Thu 16 May 2024 07:15:09 PM UTC:
  tests:  4|3
 total_score: 30/70
 2322cba
+Thu 16 May 2024 07:15:37 PM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:47:7: error: variable ‘col’ set but not used [-Werror=unused-but-set-variable]
+   47 |   int col[9][10] = {0};
+      |       ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+3d5e28f
