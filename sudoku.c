@@ -61,7 +61,7 @@ int is_valid(Node *n) {
       }
     }
   }
-  return 0;
+  return 1;
 }
 
 List *get_adj_nodes(Node *n) {
@@ -73,7 +73,7 @@ List *get_adj_nodes(Node *n) {
       if (n->sudo[i][j] == 0) {
         for (k = 1; k <= 9; k++) {
           Node *new_node = copy(n);
-
+          new_node->sudo[i][j] = k;
           if (is_valid(new_node)) {
             pushBack(list, new_node);
           } else {
