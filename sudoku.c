@@ -52,7 +52,7 @@ int is_valid(Node *n) {
     for (j = 0; j < 9; j++) {
       int num = n->sudo[i][j];
       if (num != 0) {
-        if (row[i][num] || box[(i / 3) * 3 + j / 3][num]) {
+        if (row[i][num] || col[j][num] || box[(i / 3) * 3 + j / 3][num]) {
           return 0;
         }
         row[i][num] = 1;
@@ -61,7 +61,7 @@ int is_valid(Node *n) {
       }
     }
   }
-  return 1;
+  return 0;
 }
 
 List *get_adj_nodes(Node *n) {
