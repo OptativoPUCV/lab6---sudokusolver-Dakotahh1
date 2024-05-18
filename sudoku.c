@@ -98,7 +98,32 @@ int is_final(Node *n) {
   return 1;
 }
 
-Node *DFS(Node *initial, int *cont) { return NULL; }
+Node *DFS(Node *initial, int *cont) { 
+  Stack *S = createStack();
+  push(S, initial);
+
+  while (!is_empty(S)) {
+      Node *current = top(S);
+      pop(S);
+
+      (*cont)++;
+
+      if (is_final(current)) {
+          return current;
+      }
+
+      List *adj_nodes = get_adj_nodes(current);
+      Node *adj_node = first(adj_nodes);
+      while (adj_node) {
+          push(S, adj_node);
+          adj_node = next(adj_nodes);
+      }
+
+      free(adj_nodes);  // Liberar memoria de la lista de nodos adyacentes
+      free(current);
+  }
+  return NULL;
+}
 
 /*
 int main( int argc, char *argv[] ){
